@@ -6,7 +6,7 @@
   <link href="/fanyangfanyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://fanyangfanyang.github.io/blog/"/>
-  <updated>2018-12-13T15:51:50.210Z</updated>
+  <updated>2018-12-14T07:07:22.850Z</updated>
   <id>https://fanyangfanyang.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>结合源码理解Bert</title>
+    <link href="https://fanyangfanyang.github.io/blog/2018/12/14/%E7%BB%93%E5%90%88%E6%BA%90%E7%A0%81%E7%90%86%E8%A7%A3Bert/"/>
+    <id>https://fanyangfanyang.github.io/blog/2018/12/14/结合源码理解Bert/</id>
+    <published>2018-12-14T05:47:14.000Z</published>
+    <updated>2018-12-14T07:07:22.850Z</updated>
+    
+    <content type="html"><![CDATA[<p>#摘要<br><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">Bert</a>是谷歌于前段时间发布的一个预训练的语言模型，被誉为NLP领域的ImageNet。在共计11项NLP不同领域的评测任务中，Bert均取得了state-of-art的成绩。截至笔者写这篇文章时，<a href="https://rajpurkar.github.io/SQuAD-explorer/" target="_blank" rel="noopener">squad2.0的leaderboard</a>前7名（包括ensemble和single model）已经全部被结合Bert方法的模型所占领。可以说，这一模型的出现，让大家都必须以一个全新的角度来考虑迁移学习对于NLP的重要性。或者正如许多知名学者所说的那样，Bert正在引领NLP进入一个全新的时代。<br>本文将从Bert模型的整体结构入手，并结合代码的实现细节来对其进行分析。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#摘要&lt;br&gt;&lt;a href=&quot;https://arxiv.org/abs/1810.04805&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bert&lt;/a&gt;是谷歌于前段时间发布的一个预训练的语言模型，被誉为NLP领域的ImageNet。在共计11项NL
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="https://fanyangfanyang.github.io/blog/tags/NLP/"/>
+    
+      <category term="Bert" scheme="https://fanyangfanyang.github.io/blog/tags/Bert/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Hexo+Github搭建个人博客</title>
