@@ -6,7 +6,7 @@
   <link href="/fanyangfanyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://fanyangfanyang.github.io/blog/"/>
-  <updated>2018-12-14T07:07:22.850Z</updated>
+  <updated>2018-12-14T08:05:07.556Z</updated>
   <id>https://fanyangfanyang.github.io/blog/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://fanyangfanyang.github.io/blog/2018/12/14/%E7%BB%93%E5%90%88%E6%BA%90%E7%A0%81%E7%90%86%E8%A7%A3Bert/"/>
     <id>https://fanyangfanyang.github.io/blog/2018/12/14/结合源码理解Bert/</id>
     <published>2018-12-14T05:47:14.000Z</published>
-    <updated>2018-12-14T07:07:22.850Z</updated>
+    <updated>2018-12-14T08:05:07.556Z</updated>
     
-    <content type="html"><![CDATA[<p>#摘要<br><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">Bert</a>是谷歌于前段时间发布的一个预训练的语言模型，被誉为NLP领域的ImageNet。在共计11项NLP不同领域的评测任务中，Bert均取得了state-of-art的成绩。截至笔者写这篇文章时，<a href="https://rajpurkar.github.io/SQuAD-explorer/" target="_blank" rel="noopener">squad2.0的leaderboard</a>前7名（包括ensemble和single model）已经全部被结合Bert方法的模型所占领。可以说，这一模型的出现，让大家都必须以一个全新的角度来考虑迁移学习对于NLP的重要性。或者正如许多知名学者所说的那样，Bert正在引领NLP进入一个全新的时代。<br>本文将从Bert模型的整体结构入手，并结合代码的实现细节来对其进行分析。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">Bert</a>是谷歌于前段时间发布的一个预训练的语言模型，被誉为NLP领域的ImageNet。在共计11项NLP不同领域的评测任务中，Bert均取得了state-of-art的成绩。截至笔者写这篇文章时，<a href="https://rajpurkar.github.io/SQuAD-explorer/" target="_blank" rel="noopener">squad2.0的leaderboard</a>前7名（包括ensemble和single model）已经全部被结合Bert方法的模型所占领。可以说，这一模型的出现，让大家都必须以一个全新的角度来考虑迁移学习对于NLP的重要性。或者正如许多知名学者所说的那样，Bert正在引领NLP进入一个全新的时代。<br>本文将从Bert模型的整体结构入手，并结合代码的实现细节来对其进行分析。</p><h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><p>Transformer是由谷歌在<a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank" rel="noopener">Attention Is ALL You Need</a>一文提出的一种模型。它完全地抛弃了原先在NLP领域应用十分广泛的LSTM结构，转而仅利用Attention机制和全连接层来挖掘文本中蕴含的信息，具体结构如下图所示：<br><img src="https://ihipja.dm.files.1drv.com/y4m0NJNIXircPWfyWJhILvo8qu76K4T881uNi6Upfmx_3Lgzcn3pVraVOoi5dCheN8rjb1DK1vxYCylcm5Vpe4y0Jq6gjcf9f931BaLiZx_fYA2DHkAikZjnrnXewohZPBXJJfRrYgPN1wvC0r_8wpi3kWUEO1OUVOE4fCw0yUPQAgMaWMVpm-jSyfBYk5N00D3NEP6_spKpJp8YV4KiV9x7Q?width=525&amp;height=711&amp;cropmode=none" alt=""><br>由于不再使用RNN（LSTM）网络结构，这一模型摆脱了输入序列在先后关系上的约束，即可以同时输入与处理同一句子所有单词。这一点极大的提高了模型的并行性，缩短了模型训练所需要的时间。<br>这一模型最初被应用在机器翻译领域，并在WMT2014的英德翻译、英法翻译评测中，都取得了当时最好的的效果。<br>如今，包括<a href="https://arxiv.org/pdf/1810.04805.pdf" target="_blank" rel="noopener">Bert</a>、<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf" target="_blank" rel="noopener">OpenAI Transformer</a>在内的许多模型，都采用了Transformer的思路，并取得了不错的成绩。具体的结构和代码细节将在下一节中进行详细阐述。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;#摘要&lt;br&gt;&lt;a href=&quot;https://arxiv.org/abs/1810.04805&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bert&lt;/a&gt;是谷歌于前段时间发布的一个预训练的语言模型，被誉为NLP领域的ImageNet。在共计11项NL
+        &lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1810.04805&quot; target=&quot;_blank&quot; rel=&quot;noopen
       
     
     </summary>
